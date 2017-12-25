@@ -2,172 +2,162 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Black Code Collective</title>
-  <meta name="description" content="We are black software developers creating a welcoming community to grow our skills, share knowledge and help each other progress through our careers. Whether you're just starting out, or you're well along in your career, join us.
-">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Black Code Collective</title>
+    <meta name="description"
+          content="We are black software developers creating a welcoming community to grow our skills
+    , share knowledge and help each other progress through our careers. Whether you're just starting out, or
+    you're well along in your career, join us.">
 
-  <link rel="stylesheet" href="{% static "css/main.css" %}">
-  <link rel="icon" type="image/png" href="{% static "img/favicon.ico" %}">
-
-<!-- Twitter Card data -->
-<!-- Open Graph data -->
-
+    <link rel="stylesheet" href="{% static "css/main.css" %}">
+    <link rel="icon" type="image/png" href="{% static "img/favicon.ico" %}">
 </head>
 
 
-  <body>
+<body>
 
-    <header class="header home ">
-  <div class="wrapper-large">
-    <a href="#index" class="home_link">
-      <img src="../assets/bcc_slack_icon.png" alt="Black Code Collective logo" class="header_logo">
-      <span class="lght"><span class="strng">Black</span>CodeCollective</span>
-    </a>
-    <ul class="header_links">
-      <li><a href="#join">Who We Are</a></li>
-      <li><a href="#contact">Reach Out</a></li>
-      <li><a href="#events">Events</a></li>
-      <li><a href="#sponsors">Sponsors</a></li>
-    </ul>
-  </div>
+<header class="header home ">
+    <div class="wrapper-large">
+        <a href="#index" class="home_link">
+            <img src="{% static "img/bcc_slack_icon.png" %}" alt="Black Code Collective logo" class="header_logo">
+            <span class="lght"><span class="strng">Black</span>CodeCollective</span>
+        </a>
+        <ul class="header_links">
+            <li><a href="#join">Who We Are</a></li>
+            <li><a href="#contact">Reach Out</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#sponsors">Sponsors</a></li>
+        </ul>
+    </div>
 </header>
 
 
-      <section class="body clearfix">
-        <section class="">
-    <a name="index"></a>
-    <div class="slides">
-        <h1 class="title lght"> <span class="strng">Black</span>CodeCollective</h1>
-        <img class="slide" src="../assets/slide_1.png">
-        <img class="slide" src="../assets/slide_2.png">
-        <img class="slide" src="../assets/slide_3.png">
-    </div>
-</section>
-<section class="sml">
-    <img src="../assets/bcc_slack_icon.png" alt="Black Code Collective logo" class="body_logo cntr">
-</section>
-<script>
-    var slideIndex = 0;
-    carousel();
-
-    function carousel() {
-        var i;
-        var x = document.getElementsByClassName("slide");
-        for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > x.length) {slideIndex = 1}
-        x[slideIndex-1].style.display = "block";
-        setTimeout(carousel, 2000); // Change image every 2 seconds
-    }
-</script>
-<section class="brown">
-    <a name="join"></a>
-    <div class="med-col med-space cntr">
-        <h2 class=""> We are black software developers creating a welcoming community to grow our skills, share knowledge and help each other progress through our careers. Whether you're just starting out, or you're well along in your career, join us.</h2>
-        <a class="typeform-share btn" target="_blank" href="https://blkcode.typeform.com/to/lJSebz">Join Us on Slack</a>
-
-    </div>
-</section>
-<section class="mission-section">
-    <a name="contact"></a>
-    <div class="space cntr">
-        <h2>Wanna Reach Out?</h2>
-        <h2>We're Here👇🏿</h2>
-            <a class="typeform-share btn" href="https://blkcode.typeform.com/to/RgGm4a" data-mode="drawer_right" target="_blank">Contact Us! </a>
+<section class="body clearfix">
+    <section class="">
+        <a name="index"></a>
+        <div class="slides">
+            <h1 class="title lght"><span class="strng">Black</span>CodeCollective</h1>
+            <img class="slide" src="{% static "img/slide_1.png" %}"/>
+            <img class="slide" src="{% static "img/slide_2.png" %}"/>
+            <img class="slide" src="{% static "img/slide_3.png" %}"/>
+        </div>
+    </section>
+    <section class="sml">
+        <img src="{% static "img/bcc_slack_icon.png" %}" alt="Black Code Collective logo" class="body_logo cntr">
+    </section>
     <script>
-        (function () { var qs, js, q, s, d = document, gi = d.getElementById, ce = d.createElement, gt = d.getElementsByTagName, id = "typef_orm_share", b = "https://embed.typeform.com/"; if (!gi.call(d, id)) { js = ce.call(d, "script"); js.id = id; js.src = b + "embed.js"; q = gt.call(d, "script")[0]; q.parentNode.insertBefore(js, q) } })()
+        var slideIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("slide");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {
+                slideIndex = 1
+            }
+            x[slideIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
     </script>
-    </div>
+    <section class="brown">
+        <a name="join"></a>
+        <div class="med-col med-space cntr">
+            <h2 class="">
+                We are black software developers creating a welcoming community to grow our skills,
+                share knowledge and help each other progress through our careers. Whether you're just starting out,
+                or you're well along in your career, join us.
+            </h2>
+            <a class="typeform-share btn" target="_blank" href="https://blkcode.typeform.com/to/lJSebz">Join Us on
+                Slack</a>
+        </div>
+    </section>
+    <section class="mission-section">
+        <a name="contact"></a>
+        <div class="space cntr">
+            <h2>Wanna Reach Out?</h2>
+            <h2>We're Here👇🏿</h2>
+            <a class="typeform-share btn" href="https://blkcode.typeform.com/to/RgGm4a" data-mode="drawer_right"
+               target="_blank">Contact Us! </a>
+            <script>
+                (function () {
+                    var qs, js, q, s, d = document, gi = d.getElementById, ce = d.createElement,
+                        gt = d.getElementsByTagName, id = "typef_orm_share", b = "https://embed.typeform.com/";
+                    if (!gi.call(d, id)) {
+                        js = ce.call(d, "script");
+                        js.id = id;
+                        js.src = b + "embed.js";
+                        q = gt.call(d, "script")[0];
+                        q.parentNode.insertBefore(js, q)
+                    }
+                })()
+            </script>
+        </div>
+    </section>
+    <section class="event-section">
+        <a name='events'></a>
+        <h1 class="cntr">Events</h1>
+        <div class="grid">
+            {% for event in events %}
+            <div class="event cntr">
+                <h2>{{ event.name }}</h2>
+                {{ event.description | safe |truncatechars:280}}
+                <br>
+                <a class="btn" href="{{ event.link }}" target="_blank">more details</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="med brown">
+        <a name='sponsors'></a>
+        <div class="cntr more-space">
+            <h2> Sponsors </h2>
+
+            <a href="https://www.boozallen.com/">
+                <img class="med-col" src="{% static "img/bah.png" %}" alt="Booz Allen Hamilton"/>
+            </a>
+
+        </div>
+    </section>
+
 </section>
-<section class="event-section">
-    <a name='events'></a>
-    <h1 class="cntr">Events</h1>
-    <div class="grid">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="event cntr">
-                            <h2>Kiley Williams Presents</h2>
-                            <p>TBD</p>
-                            <a class="btn" href="https://www.meetup.com/Black-Code-Collective/events/244461988"  target="_blank"> more details</a>
-                        </div>
-
-
-
-    </div>
-</section>
 <section class="med brown">
     <a name='sponsors'></a>
     <div class="cntr more-space">
-        <h2> Sponsors </h2>
-
-        <a href="https://www.boozallen.com/"><img class="med-col" src="../assets/bah.png" alt="Booz Allen Hamilton"></a>
-
-    </div>
-</section>
-
-      </section>
-
-    <section class="med brown">
-    <a name='sponsors'></a>
-    <div class="cntr more-space">
         <h2> Disclaimer </h2>
-        Any and all communication from this group will be intiated by the co-founders, and from the official black code collective email `blkcodecollctve [at] gmail.com`
-        Please alert us if you are aware of any communication through informal channels in an effort to misrepresent us and our mission statement. All notifications will be handled strictly confidentially.
+        Any and all communication from this group will be intiated by the co-founders, and from the official black code
+        collective email `blkcodecollctve [at] gmail.com`
+        Please alert us if you are aware of any communication through informal channels in an effort to misrepresent us
+        and our mission statement. All notifications will be handled strictly confidentially.
     </div>
 </section>
 
 
-    <footer class="footer">
-  <div class="wrapper">
-    <p class="inline left"> &copy; 2017 Black Code Collective. All rights reserved.</p>
-    <ul class="inline right">
-      <li class="icon"><a target="_blank" href="https://twitter.com/blkCodeCollctve">
-        <img src="../assets/twitter.svg" alt="Twitter">
-      </a></li>
-      <li class="icon"><a target="_blank" href="https://github.com/blkCodeCollctve">
-        <img src="../assets/github.svg"  alt="GitHub">
-      </a></li>
-      <li class="icon"><a target="_blank" href="https://meetup.com/Black-Code-Collective">
-        <img src="../assets/meetup.svg" alt="Meetup">
-      </a></li>
-
-
-
-    </ul>
-  </div>
+<footer class="footer">
+    <div class="wrapper">
+        <p class="inline left"> &copy; 2017 Black Code Collective. All rights reserved.</p>
+        <ul class="inline right">
+            <li class="icon"><a target="_blank" href="https://twitter.com/blkCodeCollctve">
+                <img src="{% static "img/twitter.svg" %}" alt="Twitter">
+            </a></li>
+            <li class="icon"><a target="_blank" href="https://github.com/blkCodeCollctve">
+                <img src="{% static "img/github.svg" %}" alt="GitHub">
+            </a></li>
+            <li class="icon"><a target="_blank" href="https://meetup.com/Black-Code-Collective">
+                <img src="{% static "img/meetup.svg" %}" alt="Meetup">
+            </a></li>
+        </ul>
+    </div>
 </footer>
 
 
-  </body>
+</body>
 
 </html>

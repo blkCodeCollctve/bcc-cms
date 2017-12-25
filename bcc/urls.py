@@ -17,7 +17,12 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from bcc.views import index
+import config
+
+static_dir = settings.LOCAL_STATIC_ROOT if config.DEBUG else settings.STATIC_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-] + static(settings.STATIC_URL, document_root=settings.LOCAL_STATIC_ROOT)
+    url('', index)
+] + static(settings.STATIC_URL, document_root=static_dir)

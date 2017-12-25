@@ -102,3 +102,6 @@ ENV/
 
 .idea
 db.sqlite3
+
+static
+!bcc/static
