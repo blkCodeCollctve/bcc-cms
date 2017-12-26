@@ -192,6 +192,10 @@ input, textarea {
     transform: translate(-50%, -50%);
 }
 
+.slick-dots {
+    display:none !important;
+}
+
 .body_logo {
     height: 150px;
 }

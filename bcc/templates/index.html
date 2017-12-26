@@ -42,7 +42,7 @@
         <a name="index"></a>
         <h1 class="title lght"><span class="strng">Black</span>CodeCollective</h1>
         <div class="home-slider">
-            <div><img class="slide-img" src="{% static "img/slide_1.png" %}" style="width:100%"/></div>
+            <div><img class="slide-img" src="{% static "img/slide_1.png" %}"/></div>
             <div><img class="slide-img" src="{% static "img/slide_2.png" %}"/></div>
             <div><img class="slide-img" src="{% static "img/slide_3.png" %}"/></div>
         </div>
@@ -151,6 +151,8 @@
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 2000,
+            dots: false,
+            infinite: true,
             responsive: [
                 {
                     breakpoint: 1024,
