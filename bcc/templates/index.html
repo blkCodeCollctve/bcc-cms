@@ -13,6 +13,8 @@
     you're well along in your career, join us.">
 
     <link rel="stylesheet" href="{% static "css/main.css" %}">
+    <link rel="stylesheet" href="{% static "css/slick.css" %}">
+    <link rel="stylesheet" href="{% static "css/slick-theme.css" %}">
     <link rel="icon" type="image/png" href="{% static "img/favicon.ico" %}">
 </head>
 
@@ -38,34 +40,16 @@
 <section class="body clearfix">
     <section class="">
         <a name="index"></a>
-        <div class="slides">
-            <h1 class="title lght"><span class="strng">Black</span>CodeCollective</h1>
-            <img class="slide" src="{% static "img/slide_1.png" %}"/>
-            <img class="slide" src="{% static "img/slide_2.png" %}"/>
-            <img class="slide" src="{% static "img/slide_3.png" %}"/>
+        <h1 class="title lght"><span class="strng">Black</span>CodeCollective</h1>
+        <div class="home-slider">
+            <div><img class="slide-img" src="{% static "img/slide_1.png" %}" style="width:100%"/></div>
+            <div><img class="slide-img" src="{% static "img/slide_2.png" %}"/></div>
+            <div><img class="slide-img" src="{% static "img/slide_3.png" %}"/></div>
         </div>
     </section>
     <section class="sml">
         <img src="{% static "img/bcc_slack_icon.png" %}" alt="Black Code Collective logo" class="body_logo cntr">
     </section>
-    <script>
-        var slideIndex = 0;
-        carousel();
-
-        function carousel() {
-            var i;
-            var x = document.getElementsByClassName("slide");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > x.length) {
-                slideIndex = 1
-            }
-            x[slideIndex - 1].style.display = "block";
-            setTimeout(carousel, 2000); // Change image every 2 seconds
-        }
-    </script>
     <section class="brown">
         <a name="join"></a>
         <div class="med-col med-space cntr">
@@ -105,12 +89,12 @@
         <h1 class="cntr">Events</h1>
         <div class="grid">
             {% for event in events %}
-            <div class="event cntr">
-                <h2>{{ event.name }}</h2>
-                {{ event.description | safe |truncatechars:280}}
-                <br>
-                <a class="btn" href="{{ event.link }}" target="_blank">more details</a>
-            </div>
+                <div class="event cntr">
+                    <h2>{{ event.name }}</h2>
+                    {{ event.description | safe |truncatechars:280 }}
+                    <br>
+                    <a class="btn" href="{{ event.link }}" target="_blank">more details</a>
+                </div>
             {% endfor %}
         </div>
     </section>
@@ -157,7 +141,19 @@
     </div>
 </footer>
 
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{% static "js/slick.min.js" %}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.home-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000
+        });
+    });
+</script>
 </body>
 
 </html>
