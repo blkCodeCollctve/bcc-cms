@@ -1,4 +1,6 @@
 {% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
 <!DOCTYPE html>
 <html>
 
@@ -98,29 +100,35 @@
             {% endfor %}
         </div>
     </section>
-    <section class="med brown">
+    <section class="sponsers brown cntr">
         <a name='sponsors'></a>
-        <div class="cntr more-space">
-            <h2> Sponsors </h2>
-
-            <a href="https://www.boozallen.com/">
-                <img class="med-col" src="{% static "img/bah.png" %}" alt="Booz Allen Hamilton"/>
-            </a>
-
+        <h2> Sponsors </h2>
+        <div class="sponser-slider">
+            {% for block in page.sponsers %}
+                <div>
+                    <p>{{ block.value.heading }}</p>
+                    {% image block.value.image width-300 as photo %}
+                    <a  href="{{ block.value.url }}">
+                        <img class="sponsers-img" src="{{ photo.url }}" alt="{{ photo.alt }}"/>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
     </section>
 
-</section>
+    <section class="disclaimer">
+        <a name='disclaimer'></a>
+        <div class="cntr more-space">
+            <h2> Disclaimer </h2>
+            Any and all communication from this group will be intiated by the co-founders, and from the official black
+            code
+            collective email `blkcodecollctve [at] gmail.com`
+            Please alert us if you are aware of any communication through informal channels in an effort to misrepresent
+            us
+            and our mission statement. All notifications will be handled strictly confidentially.
+        </div>
+    </section>
 
-<section class="med brown">
-    <a name='sponsors'></a>
-    <div class="cntr more-space">
-        <h2> Disclaimer </h2>
-        Any and all communication from this group will be intiated by the co-founders, and from the official black code
-        collective email `blkcodecollctve [at] gmail.com`
-        Please alert us if you are aware of any communication through informal channels in an effort to misrepresent us
-        and our mission statement. All notifications will be handled strictly confidentially.
-    </div>
 </section>
 
 
@@ -159,6 +167,25 @@
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                }
+            ]
+        });
+        $('.sponser-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: false,
+            infinite: true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
                         infinite: true,
                         dots: true
                     }

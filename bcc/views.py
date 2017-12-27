@@ -1,7 +1,6 @@
 import atexit
 from django.shortcuts import render
 from bcc.meetup import MEETUP
-import json
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 import config

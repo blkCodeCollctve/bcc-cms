@@ -83,7 +83,7 @@ input, textarea {
 }
 
 .med {
-    height: 300px;
+    height: 20%;
 }
 
 .sml {
@@ -96,8 +96,12 @@ input, textarea {
     display: block;
 }
 
-.med-col {
-    max-width: 700px;
+.sponsers {
+
+}
+
+.sponsers-img {
+    padding-left:35%;
 }
 
 .med-space {
@@ -188,12 +192,12 @@ input, textarea {
     color: white;
     left: 50%;
     margin-top: 20%;
-    padding-bottom:20%;
+    padding-bottom: 20%;
     transform: translate(-50%, -50%);
 }
 
 .slick-dots {
-    display:none !important;
+    display: none !important;
 }
 
 .body_logo {

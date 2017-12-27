@@ -31,13 +31,30 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'bcc',
+
+    # wagtail
+    'wagtail.wagtailforms',
+    'wagtail.wagtailredirects',
+    'wagtail.wagtailembeds',
+    'wagtail.wagtailsites',
+    'wagtail.wagtailusers',
+    'wagtail.wagtailsnippets',
+    'wagtail.wagtaildocs',
+    'wagtail.wagtailimages',
+    'wagtail.wagtailsearch',
+    'wagtail.wagtailadmin',
+    'wagtail.wagtailcore',
+    'modelcluster',
+    'taggit',
+    # end wagtail
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bcc'
 ]
 
 MIDDLEWARE = [
@@ -48,6 +65,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # wagtail
+    'wagtail.wagtailcore.middleware.SiteMiddleware',
+    'wagtail.wagtailredirects.middleware.RedirectMiddleware',
+    # end wagtail
 ]
 
 ROOT_URLCONF = 'bcc.urls'
@@ -75,8 +96,12 @@ WSGI_APPLICATION = 'bcc.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'bcc',
+        'USER': config.DB_USER,
+        'PASSWORD': config.DB_PASSWORD,
+        'HOST': config.DB_HOST,
+        'PORT': config.DB_PORT,
     }
 }
 
@@ -102,13 +127,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+TIME_ZONE = 'EST'
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
@@ -117,14 +138,17 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
-
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
 STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR, "static")
 ]
-
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 LOCAL_STATIC_ROOT = os.path.join(PROJECT_DIR, "static")
-
 STATIC_URL = '/static/'
+
+# User uploaded Media
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+# Wagtail
+WAGTAIL_SITE_NAME = 'Black Code Collective'
