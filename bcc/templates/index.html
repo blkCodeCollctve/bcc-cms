@@ -108,11 +108,16 @@
                 <div>
                     <p>{{ block.value.heading }}</p>
                     {% image block.value.image width-300 as photo %}
-                    <a  href="{{ block.value.url }}">
+                    <a href="{{ block.value.url }}">
                         <img class="sponsers-img" src="{{ photo.url }}" alt="{{ photo.alt }}"/>
                     </a>
                 </div>
             {% endfor %}
+            <div>
+                <a href="https://www.boozallen.com/">
+                    <img class="med-col" src="{% static "img/bah.png" %}" alt="Booz Allen Hamilton"/>
+                </a>
+            </div>
         </div>
     </section>
 
