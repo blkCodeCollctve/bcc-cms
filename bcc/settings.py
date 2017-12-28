@@ -97,13 +97,19 @@ WSGI_APPLICATION = 'bcc.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bcc',
+        'NAME': config.DB_NAME,
         'USER': config.DB_USER,
         'PASSWORD': config.DB_PASSWORD,
         'HOST': config.DB_HOST,
         'PORT': config.DB_PORT,
     }
 }
+
+# Update database configuration with $DATABASE_URL.
+if config.HEROKU_DB_URL:
+    import dj_database_url
+    db_from_env = dj_database_url.config(conn_max_age=500)
+    DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

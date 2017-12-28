@@ -15,7 +15,9 @@ MEETUP_API = os.environ.get('MEETUP_API')
 REFRESH_EVENTS = int(os.environ.get('REFRESH_EVENTS'))
 
 # Database
+DB_NAME = os.environ.get('DB_NAME')
 DB_USER = os.environ.get('DB_USER')
 DB_PASSWORD = os.environ.get('DB_PASSWORD')
 DB_HOST = os.environ.get('DB_HOST')
 DB_PORT = os.environ.get('DB_PORT')
+HEROKU_DB_URL = os.environ('DATABASE_URL')
