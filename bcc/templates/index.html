@@ -103,16 +103,20 @@
     <section class="sponsers brown cntr">
         <a name='sponsors'></a>
         <h2> Sponsors </h2>
-        <div class="sponser-slider">
-            {% for block in page.sponsers %}
-                <div>
-                    <p>{{ block.value.heading }}</p>
-                    {% image block.value.image width-300 as photo %}
-                    <a href="{{ block.value.url }}">
-                        <img class="sponsers-img" src="{{ photo.url }}" alt="{{ photo.alt }}"/>
-                    </a>
-                </div>
-            {% endfor %}
+        <div class="cntr more-space">
+{#        <div class="sponser-slider ">#}
+{#            {% for block in page.sponsers %}#}
+{#                <div>#}
+{#                    <p>{{ block.value.heading }}</p>#}
+{#                    {% image block.value.image width-300 as photo %}#}
+{#                    <a href="{{ block.value.url }}">#}
+{#                        <img class="sponsers-img" src="{{ photo.url }}" alt="{{ photo.alt }}"/>#}
+{#                    </a>#}
+{#                </div>#}
+{#            {% endfor %}#}
+                <a href="https://www.boozallen.com/">
+                    <img style="width:100%" src="{% static "img/bah.png" %}" alt="Booz Allen Hamilton"/>
+                </a>
         </div>
     </section>
 
