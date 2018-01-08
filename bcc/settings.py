@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'wagtail.wagtailcore',
     'modelcluster',
     'taggit',
+    'storages',
     # end wagtail
 
     'django.contrib.admin',
@@ -108,6 +109,7 @@ DATABASES = {
 # Update database configuration with $DATABASE_URL.
 if config.HEROKU_DB_URL:
     import dj_database_url
+
     db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env)
 
@@ -154,7 +156,18 @@ STATIC_URL = '/static/'
 
 # User uploaded Media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+if not DEBUG:
+    MEDIA_URL = "https://%s/" % config.AWS_S3_CUSTOM_DOMAIN
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+else:
+    MEDIA_URL = '/media/'
 
 # Wagtail
 WAGTAIL_SITE_NAME = 'Black Code Collective'
+
+# AWS
+if not DEBUG:
+    AWS_STORAGE_BUCKET_NAME = config.AWS_STORAGE_BUCKET_NAME
+    AWS_ACCESS_KEY_ID = config.AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY = config.AWS_SECRET_ACCESS_KEY
+    AWS_S3_CUSTOM_DOMAIN = config.AWS_S3_CUSTOM_DOMAIN
