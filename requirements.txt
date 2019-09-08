@@ -32,7 +32,7 @@ s3transfer==0.1.12
 six==1.11.0
 tzlocal==1.5.1
 Unidecode==0.4.21
-urllib3==1.22
+urllib3==1.24.2
 wagtail==1.13.1
 webencodings==0.5.1
 whitenoise==3.3.1
